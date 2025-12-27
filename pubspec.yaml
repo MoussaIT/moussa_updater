@@ -1,0 +1,35 @@
+name: moussa_updater
+description: Production-grade force update plugin (minVersion gate) with Play-only option and Android in-app update.
+version: 1.0.0
+repository: https://github.com/moussait/moussa_updater
+issue_tracker: https://github.com/moussait/moussa_updater/issues
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  integration_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.moussa.updater
+        pluginClass: MoussaUpdaterPlugin
+      ios:
+        pluginClass: MoussaUpdaterPlugin
+topics:
+  - flutter-plugin
+  - update
+  - in-app-update
+  - play-store
+  - force-update

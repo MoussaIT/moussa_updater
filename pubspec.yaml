@@ -30,8 +30,7 @@ flutter:
         pluginClass: MoussaUpdaterPlugin
 topics:
   - flutter-plugin
-  - updater
-  - moussa_updater
+  - update
   - in-app-update
   - play-store
   - force-update

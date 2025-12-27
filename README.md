@@ -1,10 +1,10 @@
 # moussa_updater 🚀
 
-A production-grade Flutter plugin for enforcing mandatory app updates
-based on a minimum app version, with advanced Android support and
+A **production-grade Flutter plugin** for enforcing **mandatory app updates**
+based on a **minimum app version**, with advanced Android support and
 safe behavior on all platforms.
 
-Built for real production apps, not demos.
+Built for **real production apps**, not demos.
 
 ---
 
@@ -12,22 +12,23 @@ Built for real production apps, not demos.
 
 ### Platform support
 
-Platform | Behavior
-Android | Google Play In-App Updates (Immediate / Flexible)
-iOS | Force update via App Store
-Web | Safe no-op (notSupported)
-Windows | Safe no-op
-macOS | Safe no-op
-Linux | Safe no-op
+| Platform | Behavior |
+|--------|----------|
+| Android | Google Play In-App Updates (Immediate / Flexible) |
+| iOS | Force update via App Store |
+| Web | Safe no-op (`notSupported`) |
+| Windows | Safe no-op |
+| macOS | Safe no-op |
+| Linux | Safe no-op |
 
 ---
 
 ### Force update logic
 
-- Enforce minimum app version
-- Optional Play Store only enforcement (blocks APK installs)
+- Enforce **minimum app version**
+- Optional **Play Store only** enforcement (blocks APK installs)
 - Blocks outdated or unofficial builds
-- Fully controlled at runtime
+- Fully controlled **at runtime**
 
 ---
 
@@ -35,8 +36,10 @@ Linux | Safe no-op
 
 Add the dependency to your pubspec.yaml:
 
+```yaml
 dependencies:
-  moussa_updater: ^1.0.0
+  moussa_updater: ^1.0.1
+```
 
 ---
 
@@ -47,32 +50,28 @@ It is recommended to call checkAndMaybeUpdate during app startup
 
 Example:
 
-final result = await MoussaUpater.checkAndMaybeUpdate(
+```dart
+final result = await MoussaUpdater.checkAndMaybeUpdate(
   minVersion: '2.3.0',
   androidUpdateMode: AndroidUpdateMode.immediate,
   androidPackageId: 'com.example.app',
   iosAppId: '1234567890',
   playOnly: true,
+  context: context,
 );
-
-if (result.action == MoussaAction.updateStarted) {
-  // Android in-app update has started
-  return;
-}
-
-if (result.action == MoussaAction.forceBlocked ||
-    result.action == MoussaAction.openStore) {
-  // Navigate to your force update screen
-}
+```
 
 ---
 
 ## 🔁 Android Update Modes
-
+```dart
 AndroidUpdateMode.immediate
+```
 Mandatory blocking update.
 
+```dart
 AndroidUpdateMode.flexible
+```
 Background download with manual installation.
 
 Important:
@@ -138,8 +137,8 @@ Recommended testing approaches:
 
 ## 📄 License
 
-MIT License © 2025 MoussaIT
-Developed by Mostafa Azazy
+MIT License © 2025 **MoussaIT**  
+Developed by **Mostafa Azazy**  
 
 See the LICENSE file for full details.
 
@@ -147,8 +146,8 @@ See the LICENSE file for full details.
 
 ## 👨‍💻 Author
 
-Mostafa Azazy
-Principal Mobile Engineer
+Mostafa Azazy  
+Principal Mobile Engineer  
 MoussaIT
 
 ---

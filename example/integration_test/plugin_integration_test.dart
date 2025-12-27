@@ -6,7 +6,6 @@
 // For more information about Flutter integration tests, please see
 // https://flutter.dev/to/integration-testing
 
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
@@ -16,7 +15,7 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   test('Moussaupdater returns notSupported on non-mobile platforms', () async {
-    final result = await Moussaupdater.checkAndMaybeUpdate(
+    final result = await MoussaUpdater.checkAndMaybeUpdate(
       minVersion: '1.0.0',
       androidUpdateMode: AndroidUpdateMode.immediate,
       androidPackageId: 'com.example.app',
@@ -26,8 +25,8 @@ void main() {
 
     expect(
       result.action == MoussaAction.notSupported ||
-      result.action == MoussaAction.upToDate ||
-      result.action == MoussaAction.forceBlocked,
+          result.action == MoussaAction.upToDate ||
+          result.action == MoussaAction.forceBlocked,
       true,
     );
   });

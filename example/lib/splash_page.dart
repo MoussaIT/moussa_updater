@@ -31,12 +31,14 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future<void> _bootGate() async {
-    final res = await Moussaupdater.checkAndMaybeUpdate(
+    final res = await MoussaUpdater.checkAndMaybeUpdate(
       minVersion: _minVersion,
       androidUpdateMode: _androidMode,
       androidPackageId: _androidPackageId,
       iosAppId: _iosAppId,
       playOnly: _playOnly,
+      context: context,
+      autoDialog: true,
     );
 
     // ✅ لو Android بدأ In-App Update، اقعد في Splash (اختياري) أو اعرض Loading
@@ -46,7 +48,8 @@ class _SplashPageState extends State<SplashPage> {
     }
 
     // ✅ لو اتمنع أو لازم يفتح المتجر
-    if (res.action == MoussaAction.forceBlocked || res.action == MoussaAction.openStore) {
+    if (res.action == MoussaAction.forceBlocked ||
+        res.action == MoussaAction.openStore) {
       if (!mounted) return;
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
@@ -62,9 +65,9 @@ class _SplashPageState extends State<SplashPage> {
 
     // ✅ لو NotSupported (Web/Desktop) أو UpToDate: ادخل التطبيق عادي
     if (!mounted) return;
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const HomePage()),
-    );
+    Navigator.of(
+      context,
+    ).pushReplacement(MaterialPageRoute(builder: (_) => const HomePage()));
   }
 
   @override

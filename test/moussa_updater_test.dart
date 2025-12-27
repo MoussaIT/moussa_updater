@@ -3,7 +3,7 @@ import 'package:moussa_updater/moussa_updater.dart';
 
 void main() {
   test('Moussaupdater returns notSupported on non-mobile platforms', () async {
-    final result = await Moussaupdater.checkAndMaybeUpdate(
+    final result = await MoussaUpdater.checkAndMaybeUpdate(
       minVersion: '1.0.0',
       androidUpdateMode: AndroidUpdateMode.immediate,
       androidPackageId: 'com.example.app',
@@ -13,8 +13,8 @@ void main() {
 
     expect(
       result.action == MoussaAction.notSupported ||
-      result.action == MoussaAction.upToDate ||
-      result.action == MoussaAction.forceBlocked,
+          result.action == MoussaAction.upToDate ||
+          result.action == MoussaAction.forceBlocked,
       true,
     );
   });

@@ -1,3 +1,8 @@
+## 1.0.1
+- Production-ready auto dialog support
+- Platform-safe behavior
+- Pub score fixes and formatting
+
 ## 1.0.0
 - Initial production release
 - Force update based on minimum app version

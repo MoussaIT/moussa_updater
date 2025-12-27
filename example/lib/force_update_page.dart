@@ -4,7 +4,7 @@ import 'package:moussa_updater/moussa_updater.dart';
 class ForceUpdatePage extends StatelessWidget {
   final String androidPackageId;
   final String iosAppId;
-  final MoussaupdaterResult result;
+  final MoussaUpdaterResult result;
 
   const ForceUpdatePage({
     super.key,
@@ -45,7 +45,7 @@ class ForceUpdatePage extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () async {
-                        await Moussaupdater.openStore(
+                        await MoussaUpdater.openStore(
                           androidPackageId: androidPackageId,
                           iosAppId: iosAppId,
                         );
@@ -64,7 +64,7 @@ class ForceUpdatePage extends StatelessWidget {
 }
 
 class _DebugBox extends StatelessWidget {
-  final MoussaupdaterResult result;
+  final MoussaUpdaterResult result;
 
   const _DebugBox({required this.result});
 

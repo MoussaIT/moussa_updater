@@ -1,3 +1,9 @@
+## 1.0.2
+- Fixed Android plugin main class registration
+- Corrected `pubspec.yaml` Android plugin configuration
+- Aligned Android package name with plugin entry class
+- Resolved build error: plugin doesn't have a main class defined
+
 ## 1.0.1
 - Production-ready auto dialog support
 - Platform-safe behavior

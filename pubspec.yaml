@@ -1,6 +1,6 @@
 name: moussa_updater
 description: Production-grade force update plugin (minVersion gate) with Play-only option and Android in-app update.
-version: 1.0.2
+version: 1.0.3
 repository: https://github.com/moussait/moussa_updater
 homepage: https://github.com/moussait/moussa_updater
 issue_tracker: https://github.com/moussait/moussa_updater/issues

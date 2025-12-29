@@ -1,11 +1,11 @@
 import Flutter
 import UIKit
 
-public class MoussaupdaterPlugin: NSObject, FlutterPlugin {
+public class MoussaUpdaterPlugin: NSObject, FlutterPlugin {
 
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "moussa_updater/methods", binaryMessenger: registrar.messenger())
-    let instance = MoussaupdaterPlugin()
+    let instance = MoussaUpdaterPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

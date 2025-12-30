@@ -1,3 +1,13 @@
+## 1.0.4
+- Fixed Android GeneratedPluginRegistrant class-not-found issue
+- Added/ensured Android v2 plugin entry class exists at the correct package path
+- Resolved build error: cannot find symbol `com.moussa.updater.MoussaUpdaterPlugin`
+
+## 1.0.3
+- Fixed iOS plugin class name mismatch (case-sensitive)
+- Aligned iOS `pluginClass` with actual Objective-C/Swift plugin class
+- Resolved Xcode archive error: Unknown receiver 'MoussaUpdaterPlugin'
+
 ## 1.0.2
 - Fixed Android plugin main class registration
 - Corrected `pubspec.yaml` Android plugin configuration

@@ -15,7 +15,7 @@ import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 
-class MoussaupdaterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
+class MoussaUpdaterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
 
   private lateinit var channel: MethodChannel
   private var activity: Activity? = null
